@@ -4,5 +4,5 @@
     "description": "Example mod for Pancake server!",
     "authors": [ "storycraft" ],
     "entrypoint": "sh.pancake.mod.example.ExampleMod",
-    "mixin": "exmaple.mod.mixin.json"
+    "mixin": "example.mod.mixin.json"
 }
