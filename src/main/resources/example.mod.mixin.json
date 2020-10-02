@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.6",
+    "package": "sh.pancake.mod.example.mixin",
+    "compatibilityLevel": "JAVA_9",
+    "mixins": [
+      
+    ],
+    "injectors": {
+      "defaultRequire": 1
+    }
+}
+  

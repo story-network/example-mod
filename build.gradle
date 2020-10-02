@@ -1,0 +1,73 @@
+buildscript {
+    repositories {
+        maven {
+            name = 'StoryNetwork'
+            url = 'https://raw.githubusercontent.com/story-network/maven/master/'
+        }
+
+        maven {
+            url = 'https://maven.heartpattern.io/repository/maven-public/'
+        }
+    }
+
+    dependencies {
+        classpath 'sh.pancake:storymap:1.0.0'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'sh.pancake.storymap'
+
+// Info
+group 'sh.pancake'
+version '1.0.0'
+
+sourceCompatibility = 1.9
+targetCompatibility = 1.9
+
+compileJava.options.encoding = 'UTF-8'
+
+minecraft {
+    version = '1.16.3'
+}
+
+repositories {
+    jcenter()
+
+    maven {
+        name = 'StoryNetwork'
+        url = 'https://raw.githubusercontent.com/story-network/maven/master/'
+    }
+
+    maven {
+        name = 'Sponge'
+        url = 'https://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    compile 'sh.pancake:pancake-server:1.0.0'
+
+    // Include this if you want mixin
+    compile('org.spongepowered:mixin:0.8') {
+        exclude module: 'launchwrapper'
+        exclude module: 'modlauncher'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+
+        resources {
+            srcDir 'src/main/resources'
+        }
+
+    }
+}
