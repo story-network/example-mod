@@ -3,6 +3,7 @@ package sh.pancake.mod.example;
 import sh.pancake.server.mod.IPancakeMod;
 import sh.pancake.server.mod.ModData;
 import sh.pancake.server.event.EventHandler;
+import sh.pancake.server.event.IEvent;
 import sh.pancake.server.event.IEventListener;
 
 public class ExampleMod implements IPancakeMod, IEventListener {
@@ -17,7 +18,7 @@ public class ExampleMod implements IPancakeMod, IEventListener {
 
         // Event example
         data.getServer().getEventManager().registerAll(this);
-        data.getServer().getEventManager().callEvent(new Object());
+        data.getServer().getEventManager().callEvent(new ExampleEvent());
     }
 
     @Override
@@ -31,9 +32,12 @@ public class ExampleMod implements IPancakeMod, IEventListener {
     }
 
     @EventHandler
-    public void testEvent(Object o) {
+    public void testEvent(ExampleEvent o) {
         System.out.println("Hello " + o);
     }
-    
+
+    class ExampleEvent implements IEvent {
+
+    }
 
 }
