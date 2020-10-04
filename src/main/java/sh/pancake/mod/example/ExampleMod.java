@@ -17,7 +17,7 @@ public class ExampleMod implements IPancakeMod, IEventListener {
         System.out.println("Hello world!");
 
         // Event example
-        data.getServer().getEventManager().registerAll(this);
+        data.getServer().getEventManager().registerAll(this, this);
         data.getServer().getEventManager().callEvent(new ExampleEvent());
     }
 
