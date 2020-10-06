@@ -50,13 +50,6 @@ repositories {
 
 dependencies {
     compile 'sh.pancake:pancake-server:1.0.0'
-
-    // Include this if you want mixin
-    compile('org.spongepowered:mixin:0.8') {
-        exclude module: 'launchwrapper'
-        exclude module: 'modlauncher'
-        exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
-    }
 }
 
 sourceSets {
